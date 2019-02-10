@@ -6,40 +6,31 @@
     <title>Pagina teste</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <div id="app">
-        <h1>{{titulo}}</h1>
-        <div v-if="usuario.id == 1">
-            id: {{usuario.id}}, <br>
-            Nome: {{usuario.nome}}, <br>
-            Profissão: {{usuario.profissao}}
-        </div>
-        <div v-else>Nenuma usuário com esse id.</div>
-        <ul>
-            <li v-for="(item, index) in linguagens">
-                {{ index }} - {{ item.nome }}
-            </li>
-        </ul>
+        <input type="text" v-on:input="changeTitle">
+        <p>{{ sayHello() }}
+            <br>
+            <a v-bind:href="link">star wars</a>
+        </p>
     </div>
     
     <script>
         var app = new Vue({
             el: "#app",
             data: {
-                titulo: "Aula 1 - Vuejs",
-                usuario: {
-                    id: 1,
-                    nome: "Joyce",
-                    profissao: "Cientista de Dados"
+                title: "Hello World!",
+                link: 'https://www.starwars.com/'
+            },
+            methods: {
+                changeTitle: function(event){
+                    this.title = event.target.value;
                 },
-                linguagens:[
-                    { nome: "JavaScript" },
-                    { nome: "Java" },
-                    { nome: "C#" },
-                    { nome: "R" },
-                    { nome: "Python" }
-                ]
+                sayHello: function(){
+                    return this.title;
+                }
             }
         });
     </script>
