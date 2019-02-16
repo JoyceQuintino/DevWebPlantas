@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:input="changeTitle">
+            <p>{{ sayHello() }}
+                <br>
+                <a v-bind:href="link">star wars</a>
+            </p>
+            <p v-html="finishedLink"></p>
+            <button v-on:click="increase(2)">++</button>
+            <button v-on:click="decrease(2)">--</button>
+            <p>{{counter}}</p>
+            <p v-on:mousemove="updateCoordinates">
+                Coordinates: {{x}} / {{y}}
+                - <span v-on:mousemove.stop>DEAD SPOT</span>
+            </p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                title: "Hello World!",
+                link: 'https://www.starwars.com/',
+                finishedLink: '<a href="http://google.com">Google</a>',
+                counter: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                changeTitle: function(event){
+                    this.title = event.target.value;
+                },
+                sayHello: function(){
+                    return this.title;
+                },
+                increase: function(num){
+                    this.counter += num;
+                },
+                decrease: function(num){
+                    this.counter -= num;
+                },
+                updateCoordinates: function(event){
+                    this.x = event.clientX;
+                    this.y = event.clientY;                
+                },
+                dummy: function(event){
+                    event.stopPropagation();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
