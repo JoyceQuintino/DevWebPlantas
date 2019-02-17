@@ -4,8 +4,13 @@
     background-image: url(C:/Users/joyce/Documents/Joyce/devwebproject/PlantLar-Frontend/imagens/login.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    background-color:rgba(255,255,255,0.8);
+	background-position: center center;
+	opacity: 0.5;
+}
+
+.display-1{
+	color: black;
+	text-align: center;
 }
 
 .modal-login {
