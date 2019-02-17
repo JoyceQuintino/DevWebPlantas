@@ -5,11 +5,19 @@
     background-repeat: no-repeat;
     background-size: cover;
 	background-position: center center;
+	background-color: rgba(235, 237, 241, 0.7);
 }
 
-.display-1{
+.wel{
+	position: absolute;
+  	top: 50%; /* posiciona na metade da tela */
+  	margin-top: -120px; /* e retrocede metade da altura */
+	width: 98%;
+	height: 146px;
+	line-height: 50px;
+	text-align:center;
+	background-color: rgba(235, 237, 241, 0.7);
 	color: black;
-	text-align: center;
 }
 
 .modal-login {
