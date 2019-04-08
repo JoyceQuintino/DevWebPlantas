@@ -7,10 +7,14 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <!--<a class="nav-link" href="#">Sign in</a>-->
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Login</button>
-            </li>
+          <li class="nav-item active">
+            <!--<a class="nav-link" href="#">Dashboard</a>-->
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Dashboard</button>
+          </li>
+          <li class="nav-item active">
+            <!--<a class="nav-link" href="#">Sign in</a>-->
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Login</button>
+          </li>
         </ul>
     </nav>
     <div class="container">
