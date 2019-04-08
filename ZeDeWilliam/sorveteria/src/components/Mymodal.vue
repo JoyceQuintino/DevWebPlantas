@@ -16,7 +16,7 @@
             <form action="/action_page.php">
               <div class="form-group">
                   <label for="email">Data:</label>
-                  <input placeholder="Data" type="date" class="form-control" id="datepicker" width="276" />
+                  <input placeholder="Data" type="date" class="form-control" id="datepicker" width="276"/>
               </div>
               <div class="form-group">
                   <label for="quant">Quantidade:</label>

@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Dashboard',
+  name: 'Mydashboard',
   data() {
     return {
 

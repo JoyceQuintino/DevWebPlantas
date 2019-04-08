@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        name: 'GithubIssues',
+        name: 'Mylogin',
     }
 </script>
 
