@@ -1,7 +1,51 @@
 <template>
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-offset-2 col-8">
+      <div class="col-offset-1 col-10">
+        <div class="card" 
+             style="margin: 10px">
+          <div class="card-header">
+            Filtro por datas
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-2">
+                <label>Data inicial</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+
+              <div class="col-2">
+                <label>Data final</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+              
+              <div class="col">
+                <button type="button" class="btn btn-secondary">Filtrar</button>
+              </div>
+            </div>
+
+            <!-- <div class="row"> -->
+              <!-- <div class="col-offset-10 col-2"> -->
+                <!-- <div class="text-right" style="margin-top: 10px">
+                  <button type="button" class="btn btn-secondary">Filtrar</button>
+                </div> -->
+                
+              <!-- </div> -->
+            <!-- </div> -->
+             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <div class="row justify-content-md-center">
+      <div class="col-offset-1 col-10">
         <div class="card" 
              style="margin: 10px">
           <div class="card-header">
