@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
     "gijgo": "^1.9.13",
     "toastr": "^2.1.4",
     "vue": "^2.5.2",

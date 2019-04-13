@@ -5,7 +5,7 @@ import toastr from 'toastr';
 const baseUrl = 'http://localhost:5000/';
 export default class ApiService {
   constructor(name) {
-    this.url = baseUrl + this.name;
+    this.url = baseUrl + name;
   }
 
   async getAll(filter = {}, sub = '') {
