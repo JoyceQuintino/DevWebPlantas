@@ -22,7 +22,6 @@ export default class ApiService {
       })
   }
 
-
   async getById (id, sub = '') {
     return new Promise((resolve, reject) => {
       axios
@@ -50,8 +49,7 @@ export default class ApiService {
     })
   }
 
-  async update (newObject, id, sub = '') {
-    
+  async update (newObject, id, sub = '') {    
     return new Promise((resolve, reject) => {
       axios
         .put(this.url + sub + id, newObject)
@@ -85,9 +83,5 @@ export default class ApiService {
         })
     })
   }
-
-
-
-
 
 }

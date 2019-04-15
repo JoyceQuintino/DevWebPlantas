@@ -3,7 +3,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Mydashboard from '@/components/Mydashboard';
 import Mylogin from '@/components/Mylogin';
-import Mymodal from '@/components/Mymodal';
+import Mymodalremessa from '@/components/Mymodalremessa';
+import Mymodallocal from '@/components/Mymodallocal';
 import Mysidebar from '@/components/Mysidebar';
 
 Vue.use(Router);
@@ -30,9 +31,14 @@ export default new Router({
       component: Mylogin
     },
     {
-      path: '/modal',
-      name: 'modal',
-      component: Mymodal
+      path: '/modalremessa',
+      name: 'modalremessa',
+      component: Mymodalremessa
+    },
+    {
+      path: '/modallocal',
+      name: 'modallocal',
+      component: Mymodallocal
     }
   ],
 });
