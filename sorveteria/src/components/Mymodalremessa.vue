@@ -1,54 +1,80 @@
 <template>
-  <div class="Mymodal container">
-    <!-- The Modal -->
-    <div class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-                                            
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Cadastro de remessa</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-offset-1 col-10">
+        <div class="card" style="margin-top: 20px">
+          <div class="card-header">
+            Cadastro de Remessa
           </div>
-                                                
-          <!-- Modal body -->
-          <div class="modal-body">
-            <form action="/action_page.php">
-              <div class="form-group">
-                  <label for="datepicker">Data:</label>
-                  <input  v-model="data" placeholder="Data" type="date" class="form-control" id="datepicker" width="276"/>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-3">
+                <label>Quantidade total</label>
               </div>
-              <div class="form-group">
-                  <label for="quant">Quantidade:</label>
-                  <input  v-model="quantidade" placeholder="Quantidade" class="form-control" id="quant">
+              <div class="col-3">
+                <input v-model="quantidade" type="number" class="form-control" aria-label="Text input with dropdown button">
               </div>
-              <div class="form-group">
-                  <label for="quantVendidos">Quantidade de vendidos:</label>
-                  <input  v-model="quantVend" placeholder="Quantidade de vendidos" class="form-control" id="quantVendidos">
+            
+              <div class="col-3">
+                <label>Quantidade vendida</label>
               </div>
-              <div class="form-group">
-                  <label for="quantPagos">Quantidade de pagos:</label>
-                  <input  v-model="quantPagos" placeholder="Quantidade de pagos" class="form-control" id="quantPagos">
+              <div class="col-3">
+                <input v-model="quantVend" type="number" class="form-control" aria-label="Text input with dropdown button">
               </div>
-              <div class="form-group">
-                  <label for="local">Local:</label>
-                   <b-form-select v-model="selected1" :options="local" id="local"></b-form-select>
+            </div>
+
+            <div class="row" style="margin-top: 5px">
+              <div class="col-3">
+                <label>Quantidade paga</label>
               </div>
-              <div class="form-group">
-                  <label for="status">Status:</label>
-                  <b-form-select v-model="selected1" :options="status" id="status"></b-form-select>
+              <div class="col-3">
+                <input v-model="quantPagos" type="number" class="form-control" aria-label="Text input with dropdown button">
               </div>
-            </form>
+
+              <div class="col-3">
+                <label>Data</label>
+              </div>
+              <div class="col-3">
+                <input v-model="data" type="date" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 5px">
+              <div class="col-3">
+                <label>Local</label>
+              </div>
+              <div class="col-3">
+                <select v-model="local_id" name="select-local" class="form-control">
+                  <option   key="Selecione" value=none>Selecione</option>
+                  <option  v-for="(item, index) in local" :key="index" @value="item.value">{{item.value}}</option> 
+                </select>
+              </div>
+
+              <div class="col-3">
+                <label>Status</label>
+              </div>
+              <div class="col-3">
+                <select v-model="status" name="select" class="form-control">
+                  <option   key="Selecione" value=None>Selecione</option>
+                  <option   key="Pendente" value="Pendente">Pendente</option>
+                  <option  key="Finalizado" value="Finalizado">Finalizado</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 5px">
+              <div class="col d-flex justify-content-end">
+                <button @click="createRemessa()" type="button" style="width:100px" class="btn btn-secondary" >Salvar</button>
+              </div>
+            </div>
+
+
           </div>
-                                                
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-          </div>
-        </div>
+        </div> 
       </div>
+     </div> 
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -57,10 +83,12 @@ export default {
   name: 'Mymodalremessa',
   data() {
     return {
-      data: [],
-      quantidade: [],
-      quantVend: [],
-      quantPagos: [],
+      data: null,
+      quantidade: null,
+      quantVend: null,
+      quantPagos: null,
+      status: null,
+      local_id: null,
       selected1: [],
       local: [
         {value: 'Bloco A', text: 'Bloco A'},
@@ -75,17 +103,18 @@ export default {
     };
   },
   methods: {
-    click () {
+    createRemessa () {
       let remessa = {
-        Data: this.data,
-        Quantidade: this.quantidade,
-        QuantVend: this.quantVend,
-        QuantPagos: this.quantPagos,
-        Selected1: this.selected1,
-        Selected2: this.selected2
+        data: this.data,
+        qtde: this.quantidade,
+        vendidos: this.quantVend,
+        pagos: this.quantPagos,
+        status: this.status,
+        local_id: this.local_id,
+        usuario_id: 1
       }
-    },
-    createRemen(){
+
+
       let services = new Service('remessa').create(remessa).then(
         success => {
           console.log('sucesso', success);
@@ -94,7 +123,9 @@ export default {
           console.log('erro', error);
         }
       )
-    }
+
+    },
+
   },
 };
 </script>
