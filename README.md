@@ -1,8 +1,3 @@
-# DevWebPlantas
-Sistema para acompanhamento, gerenciamento e interação dos usuários de jardim vertical. 
+#Desenvolvimento de um sistema de gerenciamento da sorveteria Zé de William
 
-O sistema é voltado para fazer acompanhamento e gerenciamento de um jardim vertical situado no Laboratório de Redes de Computadores (LAR) do IFCE - Campus Aracati.
-A proposta desse jardim vertical surgiu por meio da idealização de um projeto realizado no LAR, onde cada aluno bolsista é encarregado de "adotar" uma plantinha e cuidar da mesma. Esse cuidado é fundamental para as plantas ficarem cada vez mais saudáveis. 
-
-Nesse contexto, o sistema permite o cadastro de usuários e interação dos mesmos por meio de uma rede social, na qual eles poderão trocar ideias e comentários a respeito da plantinha, garantindo um ambiente mais agradável e harmonioso. Além disso, o sistema conta com uma funcionalidade de postagem de fotos e um mecanismo de avaliação das plantas.    
- 
+O projeto Zé de William funciona no IFCE - campus Aracati e proporciona aos alunos da instutuição o direito de encesser a cidadania ao pagar o picolé da sorveteria Zé de Wiliam sem fiscalização. A sorveteria que é abastecida todos os dias em diferentes turnos. 
