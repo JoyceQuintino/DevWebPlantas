@@ -45,8 +45,8 @@
               </div>
               <div class="col-3">
                 <select v-model="local_id" name="select-local" class="form-control">
-                  <option   key="Selecione" value=none>Selecione</option>
-                  <option  v-for="(item, index) in local" :key="index" @value="item.value">{{item.value}}</option> 
+                  <!-- <option   key="Selecione" value=none>Selecione</option> -->
+                  <option  v-for="(item, index) in local" :key="index" :value="item.id">{{item.descricao}}</option> 
                 </select>
               </div>
 
@@ -55,9 +55,9 @@
               </div>
               <div class="col-3">
                 <select v-model="status" name="select" class="form-control">
-                  <option   key="Selecione" value=None>Selecione</option>
-                  <option   key="Pendente" value="Pendente">Pendente</option>
-                  <option  key="Finalizado" value="Finalizado">Finalizado</option>
+                  <!-- <option   key="Selecione" value=None>Selecione</option> -->
+                  <option   key="Pendente" :value=false>Pendente</option>
+                  <option  key="Finalizado" :value=true>Finalizado</option>
                 </select>
               </div>
             </div>
@@ -90,27 +90,19 @@ export default {
       status: null,
       local_id: null,
       selected1: [],
-      local: [
-        {value: 'Bloco A', text: 'Bloco A'},
-        {value: 'Bloco B', text: 'Bloco B'},
-        {value: 'Bloco C', text: 'Bloco C'}
-      ],
-      selected2: [],
-      status: [
-        {value: 'Pendente', text: 'Pendente'},
-        {value: 'Finalizado', text: 'Finalizado'}
-      ]
+      local: [],
+      status: []
     };
   },
   methods: {
     createRemessa () {
       let remessa = {
         data: this.data,
-        qtde: this.quantidade,
-        vendidos: this.quantVend,
-        pagos: this.quantPagos,
+        quantidade: parseInt(this.quantidade),
+        vendidos: parseInt(this.quantVend),
+        pagos: parseInt(this.quantPagos),
         status: this.status,
-        local_id: this.local_id,
+        local_id: parseInt(this.local_id),
         usuario_id: 1
       }
 
@@ -126,6 +118,13 @@ export default {
 
     },
 
+  },
+  created() {
+    let services = new Service('local').getAll()
+        .then(result =>{
+          this.local = result.locais
+          console.log('Locaissssss', this.local)
+        })
   },
 };
 </script>
