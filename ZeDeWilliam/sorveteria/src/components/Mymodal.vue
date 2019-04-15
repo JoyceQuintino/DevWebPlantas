@@ -15,35 +15,28 @@
           <div class="modal-body">
             <form action="/action_page.php">
               <div class="form-group">
-                  <label for="email">Data:</label>
-                  <input placeholder="Data" type="date" class="form-control" id="datepicker" width="276"/>
+                  <label for="datepicker">Data:</label>
+                  <input  v-model="data" placeholder="Data" type="date" class="form-control" id="datepicker" width="276"/>
               </div>
               <div class="form-group">
                   <label for="quant">Quantidade:</label>
-                  <input placeholder="Quantidade" class="form-control" id="quant">
+                  <input  v-model="quantidade" placeholder="Quantidade" class="form-control" id="quant">
               </div>
               <div class="form-group">
                   <label for="quantVendidos">Quantidade de vendidos:</label>
-                  <input placeholder="Quantidade de vendidos" class="form-control" id="quantVendidos">
+                  <input  v-model="quantVend" placeholder="Quantidade de vendidos" class="form-control" id="quantVendidos">
               </div>
               <div class="form-group">
                   <label for="quantPagos">Quantidade de pagos:</label>
-                  <input placeholder="Quantidade de pagos" class="form-control" id="quantPagos">
+                  <input  v-model="quantPagos" placeholder="Quantidade de pagos" class="form-control" id="quantPagos">
               </div>
               <div class="form-group">
                   <label for="local">Local:</label>
-                  <select class="form-control" id="local">
-                    <option>Bloco A</option>
-                    <option>Bloco B</option>
-                    <option>Bloco C</option>
-                  </select>
+                   <b-form-select v-model="selected1" :options="local" id="local"></b-form-select>
               </div>
               <div class="form-group">
                   <label for="status">Status:</label>
-                  <select class="form-control" id="status">
-                    <option>Pendente</option>
-                    <option>Finalizado</option>
-                  </select>
+                  <b-form-select v-model="selected1" :options="status" id="status"></b-form-select>
               </div>
             </form>
           </div>
@@ -52,7 +45,6 @@
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
-
         </div>
       </div>
     </div>
@@ -60,12 +52,30 @@
 </template>
 
 <script>
+import Service from '../services/ApiService.js'
 export default {
   name: 'Mymodal',
   data() {
     return {
-      
+      data: [],
+      quantidade: [],
+      quantVend: [],
+      quantPagos: [],
+      selected1: [],
+      local: [
+        {value: 'Bloco A', text: 'Bloco A'},
+        {value: 'Bloco B', text: 'Bloco B'},
+        {value: 'Bloco C', text: 'Bloco C'}
+      ],
+      selected2: [],
+      status: [
+        {value: 'Pendente', text: 'Pendente'},
+        {value: 'Finalizado', text: 'Finalizado'}
+      ]
     };
+  },
+  methods: {
+    
   },
 };
 </script>
