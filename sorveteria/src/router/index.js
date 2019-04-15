@@ -3,12 +3,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Mydashboard from '@/components/Mydashboard';
 import Mylogin from '@/components/Mylogin';
-<<<<<<< HEAD
 import Mymodalremessa from '@/components/Mymodalremessa';
 import Mymodallocal from '@/components/Mymodallocal';
-=======
-//import Mymodal from '@/components/Mymodal';
->>>>>>> 5795c9f24d8be4f29b1c5bd9f925e6732640559a
 import Mysidebar from '@/components/Mysidebar';
 
 Vue.use(Router);
