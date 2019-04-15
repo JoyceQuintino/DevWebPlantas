@@ -1,32 +1,28 @@
 <template>
-  <div class="Mymodal container">
-    <!-- The Modal -->
-    <div class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-                                            
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Cadastro de local</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-offset-1 col-10">
+        <div class="card" style="margin-top: 20px">
+          <div class="card-header">
+            Cadastro de Local
           </div>
-                                                
-          <!-- Modal body -->
-          <div class="modal-body">
-            <form action="/action_page.php">
-              <div class="form-group">
-                  <label for="local">Local:</label>
-                  <input  v-model="local" placeholder="local" type="text" class="form-control" id="local" width="276"/>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-3">
+                <label>Local</label>
               </div>
-            </form>
-          </div>
-                                                
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+              <div class="col-3">
+                <input v-model="local" type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+              <div class="row" style="margin-top: 4px">
+                <div class="col d-flex justify-content-end">
+                  <button @click="createLocal()" type="button" style="width:100px" class="btn btn-secondary">Salvar</button>
+                </div>
+              </div>
           </div>
         </div>
       </div>
+     </div>
     </div>
   </div>
 </template>
@@ -37,16 +33,15 @@ export default {
   name: 'Mymodallocal',
   data() {
     return {
-      local: []
+      local: null
     };
   },
   methods: {
-    click () {
+    createLocal () {
       let local = {
-        Local: this.local
+        descricao: this.local
       }
-    },
-    createLocal(){
+
       let services = new Service('local').create(local).then(
         success => {
           console.log('sucesso', success);
@@ -55,7 +50,8 @@ export default {
           console.log('erro', error);
         }
       )
-    }
+    },
   },
 };
 </script>
+
