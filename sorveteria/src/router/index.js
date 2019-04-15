@@ -3,7 +3,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Mydashboard from '@/components/Mydashboard';
 import Mylogin from '@/components/Mylogin';
-import Mymodal from '@/components/Mymodal';
+//import Mymodal from '@/components/Mymodal';
 import Mysidebar from '@/components/Mysidebar';
 
 Vue.use(Router);
@@ -29,10 +29,10 @@ export default new Router({
       name: 'login',
       component: Mylogin
     },
-    {
-      path: '/modal',
-      name: 'modal',
-      component: Mymodal
-    }
+    // {
+    //   path: '/modal',
+    //   name: 'modal',
+    //   component: Mymodal
+    // }
   ],
 });
