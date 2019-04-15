@@ -75,7 +75,26 @@ export default {
     };
   },
   methods: {
-    
+    click () {
+      let remessa = {
+        Data: this.data,
+        Quantidade: this.quantidade,
+        QuantVend: this.quantVend,
+        QuantPagos: this.quantPagos,
+        Selected1: this.selected1,
+        Selected2: this.selected2
+      }
+    },
+    createRemen(){
+      let services = new Service('remessa').create(remessa).then(
+        success => {
+          console.log('sucesso', success);
+        },
+        error => {
+          console.log('erro', error);
+        }
+      )
+    }
   },
 };
 </script>
