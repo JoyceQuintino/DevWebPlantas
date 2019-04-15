@@ -4,7 +4,7 @@
       <div class="col-offset-1 col-10">
         <div class="card">
           <div class="card-header">
-            <h5>Remessas</h5>
+            <h5>Locais</h5>
               <!--<div class="input-group ">-->
           </div>
 
@@ -13,28 +13,21 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">Data</th>
-                      <th scope="col">Quatidade</th>
-                      <th scope="col">Vendidos</th>
-                      <th scope="col">Pagos</th>
-                      <th scope="col">Status</th>
+                      <th scope="col">Local</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-if="remessas.length == 0">
+                    <tr v-if="locais.length == 0">
                       <td colspan="4"
                           class="text-center font-italic">
                           <label> Nenhum registro foi cadastrado </label>
                         </td>
                     </tr>
-                    <tr v-for="(row, index) in remessas"
+                    <tr v-for="(row, index) in locais"
                       :key="row.id">
                       
-                      <td>{{row.data}}</td>
-                      <td>{{row.quantidade}}</td>
-                      <td>{{row.vendidos}}</td>
-                      <td>{{row.pagos}}</td>
-                      <td><span :class="classeBadge(row.status)">{{row.status ? "Pedente" : "Finalizado"}}</span></td>
+                      <td>{{row.local}}</td>
+                      
                     </tr>
                   </tbody>
                 </table>
@@ -51,27 +44,21 @@
 <script>
 import Service from '../services/ApiService.js'
 export default {
-  name: 'MyRemessaTable',
+  name: 'MyLocalTable',
   data() {
     return {
-      remessas: []
+      locais: []
     };
   },
   methods: {
-    classeBadge (status) {
-      if (!status) {
-        return "badge badge-primary"
-      }else {
-        return "badge badge-danger"
-      }
-    }
+    
     
   },
   created() {
-    let services = new Service('remessa').getAll()
+    let services = new Service('local').getAll()
         .then(result =>{
-          this.remessas = result.remessas
-          console.log('remessas', this.remessas)
+          this.locais = result.locais
+          console.log('locais', this.locais)
         })
   },
 };
