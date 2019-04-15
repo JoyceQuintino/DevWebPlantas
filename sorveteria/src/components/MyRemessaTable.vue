@@ -37,7 +37,7 @@
                       <td>{{row.quantidade}}</td>
                       <td>{{row.vendidos}}</td>
                       <td>{{row.pagos}}</td>
-                      <td>{{row.status}}</td>
+                      <td><span :class="classeBadge(row.status)">{{row.status ? "Pedente" : "Finalizado"}}</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -61,7 +61,13 @@ export default {
     };
   },
   methods: {
-    
+    classeBadge (status) {
+      if (!status) {
+        return "badge badge-primary"
+      }else {
+        return "badge badge-danger"
+      }
+    }
     
   },
   created() {
