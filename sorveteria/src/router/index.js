@@ -7,6 +7,7 @@ import Mymodalremessa from '@/components/Mymodalremessa';
 import Mymodallocal from '@/components/Mymodallocal';
 import Mysidebar from '@/components/Mysidebar';
 import MyRemessaTable from '@/components/MyRemessaTable';
+import MyLocalTable from '@/components/MyLocalTable';
 
 Vue.use(Router);
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/remessa',
       name: 'remessa',
       component: MyRemessaTable
+    },
+    {
+      path: '/local',
+      name: 'local',
+      component: MyLocalTable
     }
   ],
 });

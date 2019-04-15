@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
       <div class="col-offset-1 col-10">
         <div class="card" style="margin-top: 20px">
           <div class="card-header">
