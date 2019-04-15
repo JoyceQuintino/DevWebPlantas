@@ -11,10 +11,10 @@
               <div class="col-3">
                 <label>Local</label>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <input v-model="local" type="text" class="form-control" aria-label="Text input with dropdown button">
               </div>
-              <div class="row" style="margin-top: 4px">
+              <div class="row">
                 <div class="col d-flex justify-content-end">
                   <button @click="createLocal()" type="button" style="width:100px" class="btn btn-secondary">Salvar</button>
                 </div>
