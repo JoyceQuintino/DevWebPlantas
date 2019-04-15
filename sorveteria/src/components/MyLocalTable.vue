@@ -26,7 +26,7 @@
                     <tr v-for="(row, index) in locais"
                       :key="row.id">
                       
-                      <td>{{row.local}}</td>
+                      <td>{{row.descricao}}</td>
                       
                     </tr>
                   </tbody>
