@@ -13,18 +13,18 @@
                 <label>Data inicial</label>
               </div>
               <div class="col-3">
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                <input v-model="dataInicial" type="date" class="form-control" aria-label="Text input with dropdown button">
               </div>
 
               <div class="col-2">
                 <label>Data final</label>
               </div>
               <div class="col-3">
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                <input v-model="dataFinal" type="date" class="form-control" aria-label="Text input with dropdown button">
               </div>
               
               <div class="col">
-                <button type="button" class="btn btn-secondary">Filtrar</button>
+                <button type="button" class="btn btn-secondary" @click="createChart()">Filtrar</button>
               </div>
             </div>
 
@@ -67,6 +67,8 @@ export default {
   name: 'Mydashboard',
   data() {
     return {
+      dataInicial: new Date(),
+      dataFinal: new Date(),
       dados: [],
       data: [],
       pagos: [],
@@ -75,7 +77,11 @@ export default {
   },
   methods: {
     createChart() {
-      let services = new Service('remessa').getAll()
+      let filter = {
+        dataInicial: this.dataInicial,
+        dataFinal: this.dataFinal
+      }
+      let services = new Service('remessa/filtro').getAll(filter)
         .then(result =>{
           console.log("sucesso: ", result)
           this.dados = result
