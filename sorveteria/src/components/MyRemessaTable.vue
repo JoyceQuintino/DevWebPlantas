@@ -1,5 +1,53 @@
 <template>
-  <h1>TESTE</h1>
+  <div class="container" style="margin-top: 20px">
+    <div class="row justify-content-md-center">
+      <div class="col-offset-1 col-10">
+        <div class="card">
+          <div class="card-header">
+            <h5>Remessas</h5>
+              <!--<div class="input-group ">-->
+          </div>  
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Data</th>
+                      <th scope="col">Quatidade</th>
+                      <th scope="col">Vendidos</th>
+                      <th scope="col">Pagos</th>
+                      <th scope="col">Status</th>
+                      
+                      
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-if="remessas.length == 0">
+                      <td colspan="4"
+                          class="text-center font-italic">
+                          <label> Nenhum registro foi cadastrado </label>
+                        </td>
+                    </tr>
+                    <tr v-for="(row, index) in remessas"
+                      :key="row.id">
+                      
+                      <td>{{row.data}}</td>
+                      <td>{{row.quantidade}}</td>
+                      <td>{{row.vendidos}}</td>
+                      <td>{{row.pagos}}</td>
+                      <td>{{row.status}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </template>
 
@@ -9,39 +57,18 @@ export default {
   name: 'MyRemessaTable',
   data() {
     return {
-      
+      remessas: []
     };
   },
   methods: {
-    createRemessa () {
-      let remessa = {
-        data: this.data,
-        quantidade: parseInt(this.quantidade),
-        vendidos: parseInt(this.quantVend),
-        pagos: parseInt(this.quantPagos),
-        status: this.status,
-        local_id: parseInt(this.local_id),
-        usuario_id: 1
-      }
-
-
-      let services = new Service('remessa').create(remessa).then(
-        success => {
-          console.log('sucesso', success);
-        },
-        error => {
-          console.log('erro', error);
-        }
-      )
-
-    },
-
+    
+    
   },
   created() {
-    let services = new Service('local').getAll()
+    let services = new Service('remessa').getAll()
         .then(result =>{
-          this.local = result.locais
-          console.log('Locaissssss', this.local)
+          this.remessas = result.remessas
+          console.log('remessas', this.remessas)
         })
   },
 };
