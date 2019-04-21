@@ -8,6 +8,7 @@ import Mymodallocal from '@/components/Mymodallocal';
 import Mysidebar from '@/components/Mysidebar';
 import MyRemessaTable from '@/components/MyRemessaTable';
 import MyLocalTable from '@/components/MyLocalTable';
+import Mycarousel from '@/components/Mycarousel';
 
 Vue.use(Router);
 
@@ -16,6 +17,7 @@ export default new Router({
     {
       path: '/',
       name: '',
+      component: Mycarousel
     },
     {
       path: '/dashboard',

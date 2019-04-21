@@ -24,13 +24,15 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-         
+          
         </div>
       </div>
     </div>
     <router-view/>
   </div>
 </template>
+
+
 
 <script>
 export default {
