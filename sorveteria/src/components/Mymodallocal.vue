@@ -45,6 +45,7 @@ export default {
       let services = new Service('local').create(local).then(
         success => {
           console.log('sucesso', success);
+          alert("Cadastro realizado com sucesso!");
         },
         error => {
           console.log('erro', error);
@@ -53,5 +54,7 @@ export default {
     },
   },
 };
+
+
 </script>
 

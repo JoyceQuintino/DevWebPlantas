@@ -57,7 +57,7 @@
                 <select v-model="status" name="select" class="form-control">
                   <!-- <option   key="Selecione" value=None>Selecione</option> -->
                   <option   key="Pendente" :value=false>Pendente</option>
-                  <option  key="Finalizado" :value=true>Finalizado</option>
+                  <option   key="Finalizado" :value=true>Finalizado</option>
                 </select>
               </div>
             </div>
@@ -103,13 +103,14 @@ export default {
         pagos: parseInt(this.quantPagos),
         status: this.status,
         local_id: parseInt(this.local_id),
-        usuario_id: 1
+        usuario_id: 2
       }
 
 
       let services = new Service('remessa').create(remessa).then(
         success => {
           console.log('sucesso', success);
+          alert("Cadastro realizado com sucesso!");
         },
         error => {
           console.log('erro', error);

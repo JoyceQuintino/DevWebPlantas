@@ -44,7 +44,7 @@
                       <td>{{row.quantidade}}</td>
                       <td>{{row.vendidos}}</td>
                       <td>{{row.pagos}}</td>
-                      <td><span :class="classeBadge(row.status)">{{row.status ? "Pedente" : "Finalizado"}}</span></td>
+                      <td><span :class="classeBadge(row.status)">{{row.status ? "Pendente" : "Finalizado"}}</span></td>
                     </tr>
                   </tbody>
                 </table>
