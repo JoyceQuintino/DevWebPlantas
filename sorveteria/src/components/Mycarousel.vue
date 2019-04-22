@@ -33,13 +33,12 @@
    
     
     <div class="row justify-content-center" style="margin-top:10px">
-        <div class="col">
-            <button type="button" class="btn btn-danger" >
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-warning" style="margin-right: 10px;">
                 <router-link to="/local" >Locais</router-link>
             </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-danger" >
+        
+            <button type="button" class="btn btn-warning" style="margin-left: 10px;">
                 <router-link to="/remessa" >Remessas</router-link>
             </button>
         </div>
