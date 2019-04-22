@@ -103,7 +103,7 @@ export default {
         pagos: parseInt(this.quantPagos),
         status: this.status,
         local_id: parseInt(this.local_id),
-        usuario_id: 2
+        usuario_id: 1
       }
 
 
