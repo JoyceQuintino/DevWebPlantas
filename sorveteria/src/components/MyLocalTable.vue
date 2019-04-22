@@ -4,8 +4,18 @@
       <div class="col-offset-1 col-10">
         <div class="card">
           <div class="card-header">
-            <h5>Locais</h5>
-              <!--<div class="input-group ">-->
+            <div class="row">
+              <ul class="navbar-nav" style="margin-left:10px">
+                <li>
+                  <h5>Locais</h5>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto" style="margin-right:10px">
+                <li>
+                  <router-link to="/modallocal">Cadastrar</router-link>
+                </li>
+              </ul>
+            </div>
           </div>
 
             <div class="card-body">

@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container" style="margin-top:10px">
     <div class="row">
-      <div class="d-flex justify-content-center" style="height: 100%;">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 50%; width: 50%">
+      <div class="d-flex justify-content-center" style="height: 100%; ">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 50%; width: 60%;">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -29,22 +29,26 @@
             </a>
         </div>
       </div>
-    
-      <div class="row justify-content-center">
-        <div class="col">
-          <button type="button" class="btn btn-secondary" >
-            <router-link to="/local" >Locais</router-link>
-          </button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary" >
-            <router-link to="/remessa" >Remessas</router-link>
-          </button>
-        </div>
-        
-      </div>
     </div>
-  </div>
+   
+    
+    <div class="row justify-content-center" style="margin-top:10px">
+        <div class="col">
+            <button type="button" class="btn btn-danger" >
+                <router-link to="/local" >Locais</router-link>
+            </button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-danger" >
+                <router-link to="/remessa" >Remessas</router-link>
+            </button>
+        </div>
+    </div>
+    
+    
+    </div>
+    
+  
 </template>
 
 <script>
